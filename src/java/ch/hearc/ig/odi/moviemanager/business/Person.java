@@ -18,6 +18,12 @@ public class Person implements Serializable{
     private String lastName;
     private HashMap<String, Movie> movies;
 
+    /**
+	 * Constructeur paramétré de la classe Person. Toutes les valeurs sont obligatoires, la liste des film regardé est vide
+	 * @param id Le numéro de la personne
+	 * @param firstName Le prénom de la personne
+	 * @param lastName le nom de la personnes
+	 */
     public Person(long id, String firstName, String lastName
     ) {
         this.id = id;

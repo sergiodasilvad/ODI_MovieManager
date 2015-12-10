@@ -23,8 +23,8 @@ public class Movie implements Serializable {
 	 * @param id Le numéro du film
 	 * @param name Le titre du film
 	 * @param producer Le producteur du film
-	 * @param persons Les personne qui ont regardé le film.
 	 */
+    
     public Movie(long id, String name, String producer, HashMap<String, Person> persons) {
         this.id = id;
         this.name = name;
