@@ -33,7 +33,7 @@ public class MovieDetailBean implements Serializable {
   }
   
   /**
-   * Creates a new instance of MoviesDetailBean
+   * Création de l'instance MovieDetailBean
    */
   public MovieDetailBean() {
   }

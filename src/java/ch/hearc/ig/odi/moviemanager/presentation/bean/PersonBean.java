@@ -5,7 +5,7 @@
  */
 package ch.hearc.ig.odi.moviemanager.presentation.bean;
 
-import ch.hearc.ig.odi.moviemanager.business.Movie;
+import ch.hearc.ig.odi.moviemanager.business.Person;
 import ch.hearc.ig.odi.moviemanager.service.Services;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
@@ -16,22 +16,22 @@ import javax.inject.Named;
  *
  * @author sergio.dasilvad
  */
-@Named(value = "movieBean")
+@Named(value = "personBean")
 @RequestScoped
-public class MovieBean {
+public class PersonBean {
 
-  @Inject Services services;
-  
-  
-  /**
-   * Création de l'instance MovieBean
-   */
-  public MovieBean() {
-  }
-  
-  public List<Movie> getMovies() {
-    
-    return services.getMoviesList();
-  }
-  
+    @Inject
+    Services services;
+
+    /**
+     * Création de l'instance PersonBean
+     */
+    public PersonBean() {
+    }
+
+    public List<Person> getPerson() {
+
+        return services.getPeopleList();
+    }
+
 }
