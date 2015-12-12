@@ -45,7 +45,7 @@ public class MovieDetailBean implements Serializable {
   }
   
   /**
-   * load person's movies if exist
+   * retourne les personnes ayant regardé le film
    * @return List
    */
   public List<Person> getPersons() {

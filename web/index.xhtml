@@ -7,9 +7,9 @@
         <title>Gestionnaire de film</title>
     </h:head>
     <h:body>
-        <h3>#{msg['person.list.title']}</h3>
+        <h1>#{msg['person.list.title']}</h1>
         <h:form id="personsListForm">
-            <h:dataTable id="detailPerson" var="p" value="#{PersonBean.people}">
+            <h:dataTable id="detailPerson" var="p" value="#{personBean.person}">
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{msg['person.id']}" />
@@ -20,14 +20,14 @@
                     <f:facet name="header">
                         <h:outputText value="#{msg['person.firstName']}" />
                     </f:facet>
-                    <h:commandLink value="#{p.firstname}" action="#{PersonDetailBean.show(p)}" />
+                    <h:commandLink value="#{p.firstName}" action="#{personDetailBean.show(p)}" />
     
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{msg['person.lastName']}" />
                     </f:facet>
-                    <h:commandLink value="#{p.lastname}"  action="#{PersonDetailBean.show(p)}" />
+                    <h:commandLink value="#{p.lastName}"  action="#{personDetailBean.show(p)}" />
                 </h:column>
                 
                 <h:column>
@@ -39,9 +39,9 @@
             </h:dataTable>
         </h:form>
         
-        <h3>#{msg['movie.list.title']}</h3>
+        <h1>#{msg['movie.list.title']}</h1>
         <h:form id="moviesListForm">
-            <h:dataTable id="detailMovie" var="m" value="#{MovieBean.movies}">
+            <h:dataTable id="detailMovie" var="m" value="#{movieBean.movies}">
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{msg['movie.id']}" />
@@ -52,19 +52,19 @@
                     <f:facet name="header">
                         <h:outputText value="#{msg['movie.name']}" />
                     </f:facet>
-                    <h:commandLink value="#{m.name}" action="#{MovieDetailBean.show(m)}" />
+                    <h:commandLink value="#{m.name}" action="#{movieDetailBean.show(m)}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{msg['movie.producer']}" />
                     </f:facet>
-                    <h:outputText value="#{m.produceur}" />
+                    <h:outputText value="#{m.producer}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{msg['person.count']}" />
                     </f:facet>
-                    <h:outputText value="#{m.people.size()}" />
+                    <h:outputText value="#{m.persons.size()}" />
                 </h:column>
             </h:dataTable>
         </h:form>
