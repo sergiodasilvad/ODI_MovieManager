@@ -1,12 +1,74 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Gestionnaire de film</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h3>#{msg['person.list.title']}</h3>
+        <h:form id="personsListForm">
+            <h:dataTable id="detailPerson" var="p" value="#{PersonBean.people}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['person.id']}" />
+                    </f:facet>
+                    <h:outputText value="#{p.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['person.firstName']}" />
+                    </f:facet>
+                    <h:commandLink value="#{p.firstname}" action="#{PersonDetailBean.show(p)}" />
+    
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['person.lastName']}" />
+                    </f:facet>
+                    <h:commandLink value="#{p.lastname}"  action="#{PersonDetailBean.show(p)}" />
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['movie.count']}" />
+                    </f:facet>
+                     <h:outputText value="#{p.movies.size()}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        <h3>#{msg['movie.list.title']}</h3>
+        <h:form id="moviesListForm">
+            <h:dataTable id="detailMovie" var="m" value="#{MovieBean.movies}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['movie.id']}" />
+                    </f:facet>
+                    <h:outputText value="#{m.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['movie.name']}" />
+                    </f:facet>
+                    <h:commandLink value="#{m.name}" action="#{MovieDetailBean.show(m)}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['movie.producer']}" />
+                    </f:facet>
+                    <h:outputText value="#{m.produceur}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['person.count']}" />
+                    </f:facet>
+                    <h:outputText value="#{m.people.size()}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
     </h:body>
 </html>
 

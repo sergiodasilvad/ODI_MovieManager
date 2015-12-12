@@ -3,5 +3,82 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-
+    <application>
+        
+        <locale-config>
+            <default-locale>fr</default-locale>
+            <supported-locale>fr</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        
+        <resource-bundle>
+            <base-name>ch.hearc.ig.odi.moviemanager.presentation.bundle.msg</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+    
+    <navigation-rule>
+        <from-view-id>/*.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.show(p)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/peopleDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.show(p)}</from-action>          
+            <from-outcome>error</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.show(m)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/moviesDetail.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.show(m)}</from-action>          
+            <from-outcome>error</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/personsDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.show(m)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/moviesDetail.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{MovieDetailBean.show(m)}</from-action>          
+            <from-outcome>error</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/moviesDetail.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.show(p)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/PersonsDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{PersonDetailBean.show(p)}</from-action>          
+            <from-outcome>error</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    
 </faces-config>
