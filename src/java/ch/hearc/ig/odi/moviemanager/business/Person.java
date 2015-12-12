@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @author sergio.dasilvad
  */
 public class Person implements Serializable{
-    private Long id;
+    private long id;
     private String firstName;
     private String lastName;
     private HashMap<Long, Movie> movies;
@@ -24,19 +24,18 @@ public class Person implements Serializable{
 	 * @param firstName Le prénom de la personne
 	 * @param lastName le nom de la personnes
 	 */
-    public Person(Long id, String firstName, String lastName
-    ) {
+    public Person(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.movies = new HashMap<>();
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

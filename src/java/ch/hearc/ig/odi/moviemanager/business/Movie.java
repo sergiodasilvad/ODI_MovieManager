@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @author sergio.dasilvad
  */
 public class Movie implements Serializable {
-    private Long id;
+    private long id;
     private String name;
     private String producer;
     private HashMap<Long, Person> persons;
@@ -25,7 +25,7 @@ public class Movie implements Serializable {
 	 * @param producer Le producteur du film
 	 */
     
-    public Movie(Long id, String name, String producer, HashMap<String, Person> persons) {
+    public Movie(long id, String name, String producer) {
         this.id = id;
         this.name = name;
         this.producer = producer;
@@ -33,11 +33,12 @@ public class Movie implements Serializable {
         
     }
 
-    public Long getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
