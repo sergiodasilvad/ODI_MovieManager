@@ -13,10 +13,10 @@ import java.util.HashMap;
  * @author sergio.dasilvad
  */
 public class Movie implements Serializable {
-    private long id;
+    private Long id;
     private String name;
     private String producer;
-    private HashMap<String, Person> persons;
+    private HashMap<Long, Person> persons;
 
     /**
 	 * Constructeur paramétré de la classe Movie. Toutes les valeurs sont obligatoires , La liste des personnes est vide.
@@ -25,7 +25,7 @@ public class Movie implements Serializable {
 	 * @param producer Le producteur du film
 	 */
     
-    public Movie(long id, String name, String producer, HashMap<String, Person> persons) {
+    public Movie(Long id, String name, String producer, HashMap<String, Person> persons) {
         this.id = id;
         this.name = name;
         this.producer = producer;
@@ -33,11 +33,11 @@ public class Movie implements Serializable {
         
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,11 +57,11 @@ public class Movie implements Serializable {
         this.producer = producer;
     }
 
-    public HashMap<String, Person> getPersons() {
+    public HashMap<Long, Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(HashMap<String, Person> persons) {
+    public void setPersons(HashMap<Long, Person> persons) {
         this.persons = persons;
     }
     
